@@ -18,4 +18,6 @@ All public, evaluation-only, no patient data.
 
 ## Pipeline
 1. 'notebooks/data_prep.ipynb' builds Tier-1 retracted-paper pool (14,984 papers) 
-2. Step 2 — matched-pair construction (in progress)
+2. 'notebooks/build_pairs.ipynb' matched-pair benchmark construction
+   - claim extraction (GPT-4o-mini) -> PubMed control retrieval -> NLI entailment gate (DeBERTa-SciFact)
+   - **frozen benchmark of 253 matched retracted/valid pairs** ('data/final/benchmark_pairs.csv')
