@@ -9,6 +9,11 @@ Extends CiteEval (Xu et al., 2025).
 - **PubMed** (via NCBI E-utilities) — abstract text for cited passages.
 All public, evaluation-only, no patient data.
 
+## Key finding
+CiteEval-Auto gives a mean rating of **4.99 / 5** (99% rated the maximum) on 253 citations to retracted biomedical papers, 
+and NLI/AIS rates **100%** as "supported". Both correctly floor irrelevant controls. 
+Standard citation metrics are blind to retraction and reward the citations that should never be made.
+
 ## Structure
 - 'data/raw/' — untouched source files (not committed)
 - 'data/interim/' — processed intermediate data (e.g. tier1_pool.csv)
@@ -21,3 +26,18 @@ All public, evaluation-only, no patient data.
 2. 'notebooks/build_pairs.ipynb' matched-pair benchmark construction
    - claim extraction (GPT-4o-mini) -> PubMed control retrieval -> NLI entailment gate (DeBERTa-SciFact)
    - **frozen benchmark of 253 matched retracted/valid pairs** ('data/final/benchmark_pairs.csv')
+3. 'notebooks/blindspot_evaluation.ipynb' scores citations to retracted
+   papers with CiteEval-Auto + NLI/AIS
+   - also contains a breakdown of the papers by their retraction reason and scores citations to retracted papers with both CiteEval-Auto and NLI/AIS
+4. IN PROGRESS: retraction-aware extension lookup + proposing the 'deleted-retracted' action
+
+
+
+
+
+
+
+3. 'notebooks/blindspot_evaluation.ipynb' scores citations to retracted
+   papers with CiteEval-Auto + NLI/AIS; irrelevant-passage negative control; breakdown
+   by retraction reason
+4. The fix (in progress) — retraction-aware extension: lookup + `delete-retracted` action
