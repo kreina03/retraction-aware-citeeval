@@ -30,14 +30,3 @@ Standard citation metrics are blind to retraction and reward the citations that 
    papers with CiteEval-Auto + NLI/AIS
    - also contains a breakdown of the papers by their retraction reason and scores citations to retracted papers with both CiteEval-Auto and NLI/AIS
 4. IN PROGRESS: retraction-aware extension lookup + proposing the 'deleted-retracted' action
-
-
-
-
-
-
-
-3. 'notebooks/blindspot_evaluation.ipynb' scores citations to retracted
-   papers with CiteEval-Auto + NLI/AIS; irrelevant-passage negative control; breakdown
-   by retraction reason
-4. The fix (in progress) — retraction-aware extension: lookup + `delete-retracted` action
