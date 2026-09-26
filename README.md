@@ -23,10 +23,10 @@ Standard citation metrics are blind to retraction and reward the citations that 
 
 ## Pipeline
 1. 'notebooks/data_prep.ipynb' builds Tier-1 retracted-paper pool (14,984 papers) 
-2. 'notebooks/build_pairs.ipynb' matched-pair benchmark construction
-   - claim extraction (GPT-4o-mini) -> PubMed control retrieval -> NLI entailment gate (DeBERTa-SciFact)
-   - **frozen benchmark of 253 matched retracted/valid pairs** ('data/final/benchmark_pairs.csv')
+2. 'notebooks/build_pairs.ipynb' benchmark construction
+   - claim extraction (GPT-4o-mini) -> PubMed retrieval -> NLI entailment gate (DeBERTa-SciFact)
+   - **frozen benchmark of 253 retracted-paper claims** ('data/final/benchmark_pairs.csv')
 3. 'notebooks/blindspot_evaluation.ipynb' scores citations to retracted
    papers with CiteEval-Auto + NLI/AIS
    - also contains a breakdown of the papers by their retraction reason and scores citations to retracted papers with both CiteEval-Auto and NLI/AIS
-4. IN PROGRESS: retraction-aware extension lookup + proposing the 'deleted-retracted' action
+4. 'notebooks/retraction_aware_fix.ipynb' creates the missing retracted paper label and gives the 'delete-retracted' action
