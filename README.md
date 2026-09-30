@@ -2,7 +2,7 @@
 
 Testing whether fine-grained citation-quality metrics (CiteEval-Auto) are blind to
 citations of *retracted* biomedical papers, and proposing a retraction-aware extension.
-Extends CiteEval (Xu et al., 2025).
+Extends CiteEval (Xu et al., 2025). Code and data for the seminar paper 'Retraction-Aware Citation Evaluation' (Augmentation Methods for Language Models, Summer 2026)
 
 ## Data
 - **Retraction Watch** (via Crossref/GitLab), accessed 2026-09-03 (retraction ground truth).
